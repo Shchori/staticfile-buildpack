@@ -16,9 +16,6 @@ url_to_dependency_map:
   - match: openresty.tgz
     name: openresty
     version: 1.9.15.1
-  - match: nginx-nr-agent.tar.gz
-    name: nginx-nr-agent
-    version: 2.0.0.6
 
 dependencies:
   - name: openresty
