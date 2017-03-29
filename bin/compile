@@ -17,7 +17,7 @@ source $compile_buildpack_dir/bin/common.sh
 
 # translated_url=$($compile_buildpack_dir/compile-extensions/bin/download_dependency openresty.tgz /tmp)
 # echo "Downloaded [$translated_url]"
-mv $build_dir/openresty.tar.gz /tmp
+mv $compile_buildpack_dir/openresty.tar.gz /tmp
 compile_nginx_tgz="/tmp/openresty.tar.gz"
 cd $build_dir
 
