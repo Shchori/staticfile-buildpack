@@ -71,22 +71,4 @@ mkdir -p openresty/nginx/cache/tmp
 [[ -f $build_dir/scripts/nginx.conf ]] && mv $build_dir/scripts/nginx.conf openresty/nginx/conf/nginx.conf
 [[ -f $build_dir/scripts/mime.types ]] && mv $build_dir/scripts/mime.types openresty/nginx/conf/mime.types
 
-# Enable directory index
-if [[ -e "Staticfile" && "$(grep 'directory:' Staticfile)X" != "X" ]]; then
-  status "Enabling directory index for folders without index.html files"
-  touch openresty/nginx/conf/.enable_directory_index
-fi
-
-# Enable ssi module
-if [[ -e "Staticfile" && "$(grep 'ssi: enabled' Staticfile)X" != "X" ]]; then
-  status "Enabling ssi"
-  touch nginx/conf/.enable_ssi
-fi
-
-# Enable pushstate module
-if [[ -e "Staticfile" && "$(grep 'pushstate: enabled' Staticfile)X" != "X" ]]; then
-  status "Enabling pushstate"
-  touch nginx/conf/.enable_pushstate
-fi
-
 cp $compile_buildpack_bin/boot.sh .
